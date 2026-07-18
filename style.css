@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #00ff41;
+}
+
+.game-container {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    background: #000;
+    border: 3px solid #00ff41;
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#hud {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: space-between;
+    color: #00ff41;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.8);
+    z-index: 10;
+}
+
+.hud-section {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00ff41;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.hud-section.center {
+    text-align: center;
+    flex: 1;
+    margin: 0 20px;
+}
+
+.hud-section h3 {
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+.speedometer {
+    width: 100px;
+    height: 20px;
+    background: #1a1a1a;
+    border: 1px solid #00ff41;
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 5px 0;
+}
+
+.speed-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #00ff41, #ffff00, #ff6600);
+    width: 0%;
+    transition: width 0.1s;
+}
+
+#gameStatus {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+#storyText {
+    font-size: 12px;
+    color: #00cc33;
+}
+
+.screen {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.screen.active {
+    display: flex;
+}
+
+.screen-content {
+    text-align: center;
+    color: #00ff41;
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.8);
+}
+
+.screen-content h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: #ffff00;
+    text-shadow: 0 0 20px rgba(255, 255, 0, 0.8);
+    animation: glow 2s ease-in-out infinite;
+}
+
+.screen-content h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #00ff41;
+}
+
+@keyframes glow {
+    0%, 100% { text-shadow: 0 0 20px rgba(255, 255, 0, 0.8); }
+    50% { text-shadow: 0 0 40px rgba(255, 255, 0, 1); }
+}
+
+.story, .controls {
+    background: rgba(0, 51, 0, 0.5);
+    border: 2px solid #00ff41;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px 0;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.story p, .controls p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.story p:first-child, .controls p:first-child {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ffff00;
+}
+
+.btn-start {
+    background: linear-gradient(45deg, #00ff41, #00cc33);
+    color: #000;
+    border: 2px solid #00ff41;
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+}
+
+.btn-start:hover {
+    background: linear-gradient(45deg, #00ff41, #ffff00);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.8);
+    transform: scale(1.05);
+}
+
+.btn-start:active {
+    transform: scale(0.95);
+}
+
+.results {
+    background: rgba(0, 51, 0, 0.5);
+    border: 2px solid #00ff41;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px 0;
+    text-align: left;
+}
+
+.results h3 {
+    color: #ffff00;
+    margin-bottom: 10px;
+}
+
+.results p {
+    margin: 5px 0;
+}
+
+#gameOverMessage {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #ffff00;
+}
+
+@media (max-width: 900px) {
+    .game-container {
+        width: 90vw;
+        height: 67.5vw;
+    }
+    
+    canvas {
+        width: 100%;
+        height: 100%;
+    }
+    
+    #hud {
+        font-size: 12px;
+    }
+    
+    .screen-content h1 {
+        font-size: 36px;
+    }
+    
+    .screen-content h2 {
+        font-size: 24px;
+    }
+}
