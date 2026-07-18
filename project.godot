@@ -1,0 +1,16 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go in here are often tweaked, tweaked, and
+; converted to another format and back anyway.
+
+config_version=5
+
+[application]
+
+config/name="DARK CART - 3D"
+config/version="1.0.0"
+config/icon="res://assets/icon.svg"
+
+[rendering]
+
+renderer/rendering_method="forward_plus"
