@@ -22,7 +22,8 @@ func init(start_pos: Vector3):
 	add_child(mesh_instance)
 	
 	# Enemy indicator (glowing sphere on top)
-	head = MeshInstance3D.new()	head.mesh = SphereMesh.new()
+	head = MeshInstance3D.new()
+	head.mesh = SphereMesh.new()
 	head.mesh.radius = 0.2
 	head.position.y = 0.6
 	
