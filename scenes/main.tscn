@@ -1,35 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1wybt1w3qjtp"]
+[gd_scene load_steps=2 format=3 uid="uid://dy3mmpflkqky0"]
 
-[ext_resource type="Script" path="res://scripts/main.gd"]
-[ext_resource type="Script" path="res://scripts/player.gd"]
-[ext_resource type="Script" path="res://scripts/game_manager.gd"]
-[ext_resource type="Script" path="res://scripts/ui.gd"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_m3kqg"]
 
 [node name="Main" type="Node3D"]
-script = ExtResource("res://scripts/main.gd")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-position = Vector3(0, 3, 6)
-look_at_from_position = Vector3(0, 3, 6)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-position = Vector3(5, 10, 5)
-rotation = Vector3(-0.785398, -0.785398, 0)
-shadow_enabled = true
-
-[node name="AmbientLight3D" type="Node3D" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 
-[node name="Player" type="Node3D" parent="."]
-script = ExtResource("res://scripts/player.gd")
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
+shadow_enabled = true
 
-[node name="GameManager" type="Node" parent="."]
-script = ExtResource("res://scripts/game_manager.gd")
+[node name="Player" type="CharacterBody3D" parent="."]
+script = ExtResource("1_m3kqg")
 
-[node name="UI" type="CanvasLayer" parent="."]
-script = ExtResource("res://scripts/ui.gd")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = BoxShape3D()
 
-[node name="HUD" type="Control" parent="UI"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+mesh = BoxMesh()
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 0.2, 0, 0, 0, 10, 0, -2, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = BoxShape3D()
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = BoxMesh()

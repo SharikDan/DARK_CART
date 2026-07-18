@@ -1,36 +1,39 @@
-# DARK CART - 3D Godot Edition
+# DARK CART - 3D Edition
 
-Ночная гоночная игра перенесённая на Godot с полной 3D реализацией.
+A 3D game project built with Godot Engine 4.x.
 
-## Особенности
-- **3D графика** - полнофункциональный 3D мир вместо 2D
-- **Динамический геймплей** - избегайте препятствий и врагов
-- **Система бонусов** - используйте нитро ускорение
-- **Нео-панк стиль** - яркие неоновые цвета
+## Project Structure
 
-## Управление
-- **← →** - Влево/Вправо (движение машины)
-- **↑ ↓** - Ускорение/Торможение
-- **Space** - Нитро ускорение
-
-## Требования
-- Godot Engine 4.x
-
-## Установка
-1. Установите Godot Engine 4.x
-2. Откройте проект в Godot
-3. Нажмите F5 или Play для запуска
-
-## Структура проекта
 ```
-res://
-├── scenes/          # Сцены игры
-├── scripts/         # GDScript файлы
-├── assets/          # Ресурсы и материалы
-└── project.godot    # Конфиг проекта
+├── scenes/              # Game scenes (.tscn files)
+│   └── main.tscn       # Main game scene
+├── scripts/            # GDScript files (.gd files)
+│   └── player.gd       # Player controller script
+├── assets/             # Game assets (models, textures, sounds)
+├── project.godot       # Godot project configuration
+└── README.md
 ```
 
-## История игры
-Город во тьме. Корпоративные охотники преследуют вас через заброшенные улицы.
-Ваша задача: пережить ночную гонку и достичь безопасного дома до рассвета.
-Навигируйте через препятствия, избегайте врагов и спасайтесь из хаоса города.
+## Getting Started
+
+1. **Install Godot 4.x** - Download from [godotengine.org](https://godotengine.org)
+2. **Open the project** - Open this folder in Godot Editor
+3. **Run the game** - Press F5 or click "Run"
+
+## Controls
+
+- **WASD** or **Arrow Keys** - Move around
+- **Mouse** - Look around (click window to capture mouse)
+- **ESC** - Toggle mouse capture
+
+## Development
+
+- Scenes are stored in `scenes/`
+- Scripts are in `scripts/`
+- Add 3D models and textures to `assets/`
+
+## Current Status
+
+✅ Basic player controller with 3D camera
+✅ Ground plane
+✅ Movement and look mechanics
