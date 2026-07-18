@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DARK CART - Night Racing Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        
+        <div id="hud">
+            <div class="hud-section">
+                <h3>SPEED</h3>
+                <div id="speedometer" class="speedometer">
+                    <div id="speedBar" class="speed-bar"></div>
+                </div>
+                <span id="speedText">0 km/h</span>
+            </div>
+            
+            <div class="hud-section center">
+                <h3 id="gameStatus">DARK CART</h3>
+                <p id="storyText">Loading...</p>
+            </div>
+            
+            <div class="hud-section">
+                <h3>STATUS</h3>
+                <p>Time: <span id="timer">90</span>s</p>
+                <p>Distance: <span id="distance">0</span>m</p>
+                <p>Score: <span id="score">0</span></p>
+            </div>
+        </div>
+
+        <div id="startScreen" class="screen active">
+            <div class="screen-content">
+                <h1>🏎️ DARK CART 🏎️</h1>
+                <h2>NIGHT RACING</h2>
+                <div class="story">
+                    <p>📖 STORY:</p>
+                    <p>The city is in darkness. Corporate hunters chase you through abandoned streets.</p>
+                    <p>Your task: survive the night run and reach the safe house before dawn.</p>
+                    <p>Navigate through obstacles, avoid enemies, and escape the city chaos.</p>
+                </div>
+                <div class="controls">
+                    <p>⌨️ CONTROLS:</p>
+                    <p>← → Arrow Keys - Steer</p>
+                    <p>↑ ↓ Arrow Keys - Accelerate/Brake</p>
+                    <p>Space - Nitro Boost</p>
+                </div>
+                <button id="startBtn" class="btn-start">START GAME</button>
+            </div>
+        </div>
+
+        <div id="gameOverScreen" class="screen">
+            <div class="screen-content">
+                <h1 id="gameOverTitle">MISSION COMPLETE!</h1>
+                <div class="results">
+                    <h3>FINAL STATS:</h3>
+                    <p>Time Survived: <span id="finalTime">0</span>s</p>
+                    <p>Distance Covered: <span id="finalDistance">0</span>m</p>
+                    <p>Final Score: <span id="finalScore">0</span></p>
+                </div>
+                <p id="gameOverMessage">You've escaped the hunters!</p>
+                <button id="restartBtn" class="btn-start">PLAY AGAIN</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
